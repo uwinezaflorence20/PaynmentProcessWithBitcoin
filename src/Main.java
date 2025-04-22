@@ -2,14 +2,17 @@ public class Main {
     public static void main(String[] args) {
         PaymentProcessor processor = new PaymentProcessor();
 
-        CreditCard creditCard = new CreditCard("1234-5678-9012-3456");
-        PayPal payPal = new PayPal("user@example.com");
+        CreditCard creditCard = new CreditCard();
+        PayPal payPal = new PayPal();
        Bitcoin bitcoin = new Bitcoin();
-        ApplePay applePay = new ApplePay("Device001");
-
+        ApplePay applePay = new ApplePay();
+        System.out.println("Attempting payment with Credit Card:");
         processor.processPayment(creditCard);
+        System.out.println("Attempting payment with Pay pal:");
         processor.processPayment(payPal);
-       processor.processPayment();
+        System.out.println("Attempting payment with Bit Coin:");
+        processor.processPayment(bitcoin);
+        System.out.println("Attempting payment with Apple Pay:");
         processor.processPayment(applePay);
     }
 }
